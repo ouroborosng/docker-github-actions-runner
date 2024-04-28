@@ -31,6 +31,40 @@ Also, some GitHub Actions Workflow features, like [Job Services](https://docs.gi
 
 Currently runners [do not support containerd](https://github.com/actions/runner/issues/1265)
 
+## Kick Off 
+
+Build docker images
+```sh
+docker build -f Dockerfile.base -t ghcr.io/$account/$repo_name:$tag .
+docker build -f Dockerfile -t ghcr.io/$account/$repo_name:$tag .
+```
+
+Publish to packages
+```sh
+docker push ghcr.io/$account/$repo_name:$tag
+```
+
+Run github action runner container
+```sh
+# The PAT(Personal Access Token) needs package read & write permissions
+
+docker run -d --name runner-for-docker-github-actions-runner \
+  -e RUNNER_NAME=$CONTAINER_NAME \
+  -e ACCESS_TOKEN=$PAT \
+  -e REPO_URL=$REPO_URL \
+  -e LABELS=$LABEL \
+  ghcr.io/$account/$repo_name:$tag
+
+# example
+# docker run -d --name runner-for-docker-github-actions-runner \
+#   -e RUNNER_NAME=docker-github-actions-builder-runner \
+#   -e ACCESS_TOKEN=$PAT \
+#   -e REPO_URL=https://github.com/Ouroborosi/docker-github-actions-runner \
+#   -e LABELS=docker-github-actions-runner \
+#   ghcr.io/ouroborosi/docker-github-actions-runner:ubuntu-focal
+
+```
+
 ## Docker Artifacts ##
 
 | Container Base | Supported Architectures | Tag Regex | Docker Tags | Description | Notes |
