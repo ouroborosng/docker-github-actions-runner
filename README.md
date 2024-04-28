@@ -31,7 +31,7 @@ Also, some GitHub Actions Workflow features, like [Job Services](https://docs.gi
 
 Currently runners [do not support containerd](https://github.com/actions/runner/issues/1265)
 
-## Kick Off 
+## Kick Off
 
 Build docker images
 ```sh
