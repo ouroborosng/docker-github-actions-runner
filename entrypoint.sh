@@ -14,7 +14,7 @@ export -n APP_PRIVATE_KEY
 trap_with_arg() {
     func="$1" ; shift
     for sig ; do
-        trap "$func $sig" "$sig"
+        trap '$func $sig' "$sig"
     done
 }
 
