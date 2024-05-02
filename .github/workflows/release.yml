@@ -55,7 +55,7 @@ jobs:
           file: Dockerfile
           pull: true
           push: true
-          tags: ${{ env.ORG }}/github-runner:${{ env.TAG }},ghcr.io/${{ github.repository }}:${{ env.TAG }}
+          tags: "$(echo ${{ env.ORG }} | tr '[:upper:]' '[:lower:]')/github-runner:${{ env.TAG }},ghcr.io/${{ github.repository }}:${{ env.TAG }}"
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -93,7 +93,7 @@ jobs:
           file: Dockerfile.ubuntu-${{ matrix.release }}
           pull: true
           push: true
-          tags: ${{ env.ORG }}/github-runner:${{ env.TAG }}-ubuntu-${{ matrix.release }},ghcr.io/${{ github.repository }}:${{ env.TAG }}-ubuntu-${{ matrix.release }}
+          tags: "$(echo ${{ env.ORG }} | tr '[:upper:]' '[:lower:]')/github-runner:${{ env.TAG }}-ubuntu-${{ matrix.release }},ghcr.io/${{ github.repository }}:${{ env.TAG }}-ubuntu-${{ matrix.release }}"
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -131,7 +131,7 @@ jobs:
           file: Dockerfile.debian-${{ matrix.release }}
           pull: true
           push: true
-          tags: ${{ env.ORG }}/github-runner:${{ env.TAG }}-debian-${{ matrix.release }},ghcr.io/${{ github.repository }}:${{ env.TAG }}-debian-${{ matrix.release }}
+          tags: "$(echo ${{ env.ORG }} | tr '[:upper:]' '[:lower:]')/github-runner:${{ env.TAG }}-debian-${{ matrix.release }},ghcr.io/${{ github.repository }}:${{ env.TAG }}-debian-${{ matrix.release }}"
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
