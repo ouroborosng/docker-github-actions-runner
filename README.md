@@ -64,9 +64,9 @@ docker run -d --name runner-for-docker-github-actions-runner \
 # docker run -d --name runner-for-docker-github-actions-runner \
 #   -e RUNNER_NAME=docker-github-actions-builder-runner \
 #   -e ACCESS_TOKEN=$PAT \
-#   -e REPO_URL=https://github.com/Ouroborosi/docker-github-actions-runner \
+#   -e REPO_URL=https://github.com/ouroborosng/docker-github-actions-runner \
 #   -e LABELS=docker-github-actions-runner \
-#   ghcr.io/ouroborosi/docker-github-actions-runner:ubuntu-focal
+#   ghcr.io/ouroborosng/docker-github-actions-runner:ubuntu-focal
 
 ```
 

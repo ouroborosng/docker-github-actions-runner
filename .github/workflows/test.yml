@@ -83,7 +83,7 @@ jobs:
             GOSS_VARS=goss_vars_${GH_RUNNER_IMAGE}.yaml GOSS_FILE=goss_full.yaml GOSS_SLEEP=1 dgoss run --entrypoint /usr/bin/sleep \
             -e DEBUG_ONLY=true \
             -e RUNNER_NAME=huzzah \
-            -e REPO_URL=https://github.com/myoung34/docker-github-actions-runner \
+            -e REPO_URL=https://github.com/ouroborosng/docker-github-actions-runner \
             -e RUN_AS_ROOT=true \
             -e RUNNER_NAME_PREFIX=asdf \
             -e ACCESS_TOKEN=1234 \
@@ -91,8 +91,8 @@ jobs:
             -e APP_PRIVATE_KEY=2345 \
             -e APP_LOGIN=SOMETHING \
             -e RUNNER_SCOPE=org \
-            -e ORG_NAME=myoung34 \
-            -e ENTERPRISE_NAME=emyoung34 \
+            -e ORG_NAME=ouroborosng \
+            -e ENTERPRISE_NAME=eouroborosng \
             -e LABELS=blue,green \
             -e RUNNER_TOKEN=3456 \
             -e RUNNER_WORKDIR=/tmp/a \
@@ -172,7 +172,7 @@ jobs:
             GOSS_VARS=goss_vars_${GH_RUNNER_IMAGE}.yaml GOSS_FILE=goss_full.yaml GOSS_SLEEP=1 dgoss run --entrypoint /usr/bin/sleep \
             -e DEBUG_ONLY=true \
             -e RUNNER_NAME=huzzah \
-            -e REPO_URL=https://github.com/myoung34/docker-github-actions-runner \
+            -e REPO_URL=https://github.com/ouroborosng/docker-github-actions-runner \
             -e RUN_AS_ROOT=true \
             -e RUNNER_NAME_PREFIX=asdf \
             -e ACCESS_TOKEN=1234 \
@@ -180,8 +180,8 @@ jobs:
             -e APP_PRIVATE_KEY=2345 \
             -e APP_LOGIN=SOMETHING \
             -e RUNNER_SCOPE=org \
-            -e ORG_NAME=myoung34 \
-            -e ENTERPRISE_NAME=emyoung34 \
+            -e ORG_NAME=ouroborosng \
+            -e ENTERPRISE_NAME=eouroborosng \
             -e LABELS=blue,green \
             -e RUNNER_TOKEN=3456 \
             -e RUNNER_WORKDIR=/tmp/a \
